@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='quickprofile',
-    version='0.2.0',
+    name='SmartProfiler',
+    version='0.3.0',
     packages=find_packages(),
-    description='A simple profiling library for measuring execution time.',
+    description='A lightweight, thread-safe Python library for profiling both execution time and memory usage.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     author='Vignesh Sundaram',
