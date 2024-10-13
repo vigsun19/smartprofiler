@@ -1,62 +1,89 @@
-# QuickProfile
+# SmartProfiler
 
-A simple profiling library to measure execution time for functions, code blocks, and specific lines of code.
+SmartProfiler is a lightweight and easy-to-use Python library designed to help you effortlessly profile both the execution time and memory usage of your Python code. Whether you're optimizing performance, debugging memory usage, or profiling applications running in multithreaded environments, SmartProfiler offers a clean and efficient solution.
+## Why SmartProfiler?
 
+- **Unified Profiling**: Unlike other libraries that focus on either time or memory, SmartProfiler provides simple and intuitive decorators and context managers to profile both time and memory usage.
+- **Thread-Safe**: Specifically designed to support multithreaded applications, ensuring that profiling works seamlessly across different threads without race conditions or conflicts.
+- **Minimal Overhead**: The library is designed to introduce minimal performance overhead, so you can get accurate measurements without complicating your workflow.
+- **Easy to Use**: With just a few lines of code, you can start profiling functions, blocks of code, or even specific lines with just decorators and context managers.
 ## Features
 
-- **Function Profiling**: Decorate functions to log their execution time.
-- **Block Profiling**: Use a context manager to profile a block of code.
-- **Line Profiling**: Measure the execution time of specific lines of code.
+- **Function-Level Profiling**: Profile execution time or memory usage using decorators.
+- **Code Block and Line Profiling**: Profile specific blocks or lines of code using context managers.
+- **Multithreaded Profiling**: Profile functions, blocks, and lines in multithreaded environments with thread safety.
+- **Flexible Logging**: Integration with Python's logging framework for detailed insights into your code's performance.
 
 ## Installation
 
-You can install QuickProfile directly from the source code or via PyPI:
-
-### From PyPI
-
-To install the latest version from PyPI, use:
+You can easily install SmartProfiler via pip:
 
 ```bash
-pip install quickprofile
+pip install smartprofiler
 
 ```
 
-## Usage
-**Profiling a Function:**
-Use the `@profile_time` decorator to measure the execution time of a function:
+## Usage Examples
+**Time Profiling for Functions**
 
 ```bash
-from quickprofile import profile_time
-import time
+from smartprofiler import profile_time
 
 @profile_time
 def my_function():
-    # Simulate a time-consuming task
+    time.sleep(1)  # Simulate a time-consuming task
+
+```
+**Memory Profiling for Functions**
+
+```bash
+from smartprofiler import profile_memory
+
+@profile_memory
+def memory_intensive_function():
+    data = [1] * (10**7)  # Simulate memory usage
+
+```
+**Block Profiling (Time & Memory)**
+
+```bash
+from smartprofiler import profile_block
+
+with profile_block('time'):
     time.sleep(1)
 
-my_function()  # Logs the execution time
+with profile_block('memory'):
+    data = [1] * (10**6)
 
 ```
 
-**Profiling a Code Block:**
-Use the `profile_block` context manager to measure the execution time of a block of code:
-```bash
-from quickprofile import profile_block
-import time
+**Line Profiling (Time & Memory)**
 
-with profile_block():
-    # Simulate a time-consuming task
-    time.sleep(2)  # This will be logged
+```bash
+from smartprofiler import profile_line
+
+with profile_line('time'):
+    result = sum([i for i in range(1000)])
+
+with profile_line('memory'):
+    data = [1] * (10**6)
 
 ```
 
-**Profiling Specific Lines:**
-Use the `profile_line` context manager to measure the execution time of specific lines:
+**Multithreaded Profiling**
+
 ```bash
-from quickprofile import profile_line
+import threading
+from smartprofiler import profile_time
 
-with profile_line():
-    total = sum(i for i in range(1000000))  # This line's execution time will be logged
+def thread_function():
+    with profile_time:
+        time.sleep(1)
 
+threads = [threading.Thread(target=thread_function) for _ in range(5)]
+for t in threads:
+    t.start()
+for t in threads:
+    t.join()
 
 ```
