@@ -1,7 +1,7 @@
 import time
-import tracemalloc
 import threading
 import logging
+import functools
 from contextlib import contextmanager
 
 # Thread-local storage to handle per-thread profiling data
@@ -12,6 +12,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 def profile_time(func):
     """Decorator to profile the execution time of a function."""
+    @functools.wraps(func)
     def wrapper(*args, **kwargs):
         start_time = time.perf_counter()
         try:
@@ -22,22 +23,9 @@ def profile_time(func):
         return result
     return wrapper
 
-def profile_memory(func):
-    """Decorator to profile the memory usage of a function using tracemalloc."""
-    def wrapper(*args, **kwargs):
-        tracemalloc.start()  # Start memory tracking
-        try:
-            result = func(*args, **kwargs)
-        finally:
-            current, peak = tracemalloc.get_traced_memory()
-            tracemalloc.stop()  # Stop memory tracking
-            logging.info(f"Function '{func.__name__}' used {peak / 1024:.2f} KB of memory (peak)")
-        return result
-    return wrapper
-
 @contextmanager
 def profile_block(profile_type='time'):
-    """Context manager to profile a block of code (time or memory)."""
+    """Context manager to profile a block of code (time)."""
     if profile_type == 'time':
         _thread_local.start_time = time.perf_counter()  # Set the start time in thread-local storage
         try:
@@ -49,21 +37,13 @@ def profile_block(profile_type='time'):
                 logging.info(f"Code block took {time_taken:.4f} seconds")
             else:
                 logging.warning("Thread-local start time not set for profiling block.")
-    elif profile_type == 'memory':
-        tracemalloc.start()
-        try:
-            yield
-        finally:
-            current, peak = tracemalloc.get_traced_memory()
-            tracemalloc.stop()
-            logging.info(f"Code block used {peak / 1024:.2f} KB of memory (peak)")
     else:
-        logging.error(f"Unknown profile_type: '{profile_type}', use 'time' or 'memory'")
-        raise ValueError(f"Unknown profile_type: '{profile_type}', use 'time' or 'memory'")
+        logging.error(f"Unknown profile_type: '{profile_type}', use 'time'")
+        raise ValueError(f"Unknown profile_type: '{profile_type}', use 'time'")
 
 @contextmanager
 def profile_line(profile_type='time'):
-    """Context manager to profile specific lines of code (time or memory)."""
+    """Context manager to profile specific lines of code (time)."""
     if profile_type == 'time':
         _thread_local.start_time = time.perf_counter()  # Set the start time in thread-local storage
         try:
@@ -75,14 +55,6 @@ def profile_line(profile_type='time'):
                 logging.info(f"Line(s) took {time_taken:.4f} seconds")
             else:
                 logging.warning("Thread-local start time not set for profiling line.")
-    elif profile_type == 'memory':
-        tracemalloc.start()
-        try:
-            yield
-        finally:
-            current, peak = tracemalloc.get_traced_memory()
-            tracemalloc.stop()
-            logging.info(f"Line(s) used {peak / 1024:.2f} KB of memory (peak)")
     else:
-        logging.error(f"Unknown profile_type: '{profile_type}', use 'time' or 'memory'")
-        raise ValueError(f"Unknown profile_type: '{profile_type}', use 'time' or 'memory'")
+        logging.error(f"Unknown profile_type: '{profile_type}', use 'time'")
+        raise ValueError(f"Unknown profile_type: '{profile_type}', use 'time'")
