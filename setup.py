@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='SmartProfiler',
-    version='0.2.0',
+    version='0.2.1',
     packages=find_packages(),
     description='A lightweight, thread-safe Python library and 1-stop shop for profiling execution time, memory usage, CPU time, and function call counts.',
     long_description=open('README.md').read(),
