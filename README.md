@@ -29,7 +29,7 @@ pip install smartprofiler
 **Time Profiling for Functions**
 
 ```bash
-from smartprofiler import profile_time
+from smartprofiler.time import profile_time
 
 @profile_time
 def my_function():
@@ -39,7 +39,7 @@ def my_function():
 **Memory Profiling for Functions**
 
 ```bash
-from smartprofiler import profile_memory
+from smartprofiler.memory import profile_memory
 
 @profile_memory
 def memory_intensive_function():
@@ -50,7 +50,7 @@ def memory_intensive_function():
 **CPU Time Profiling for Functions**
 
 ```bash
-from smartprofiler import profile_cpu_time
+from smartprofiler.cpu_time import profile_cpu_time
 
 @profile_cpu_time
 def cpu_intensive_function():
@@ -62,7 +62,7 @@ def cpu_intensive_function():
 **Function Call Counting**
 
 ```bash
-from smartprofiler import profile_call_count
+from smartprofiler.function_tracking import profile_call_count
 
 @profile_call_count
 def my_function():
@@ -76,7 +76,9 @@ my_function()  # Logs: Function 'my_function' has been called 2 times
 **Block Profiling (Time, Memory & CPU-Usage)**
 
 ```bash
-from smartprofiler import profile_block
+from smartprofiler.time import profile_block
+from smartprofiler.memory import profile_block
+from smartprofiler.cpu_time import profile_block
 
 # Time Profiling Block
 with profile_block('time'):
@@ -97,7 +99,9 @@ with profile_block('cpu_time'):
 **Line Profiling (Time, Memory & CPU-Usage)**
 
 ```bash
-from smartprofiler import profile_line
+from smartprofiler.time import profile_line
+from smartprofiler.memory import profile_line
+from smartprofiler.cpu_time import profile_line
 
 # Time Profiling Line
 with profile_line('time'):
@@ -119,7 +123,7 @@ with profile_line('cpu_time'):
 
 ```bash
 import threading
-from smartprofiler import profile_time
+from smartprofiler.time import profile_time
 
 def thread_function():
     with profile_time:
