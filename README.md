@@ -1,18 +1,20 @@
 # SmartProfiler
 
-SmartProfiler is a lightweight and easy-to-use Python library designed to help you effortlessly profile both the execution time and memory usage of your Python code. Whether you're optimizing performance, debugging memory usage, or profiling applications running in multithreaded environments, SmartProfiler offers a clean and efficient solution.
+SmartProfiler is a lightweight and easy-to-use Python library designed to help you effortlessly profile **execution time**, **memory usage**, **CPU time**, and **function call counts** in your Python code. Whether you're optimizing performance, debugging memory usage, tracking CPU utilization, or monitoring function calls, SmartProfiler provides a simple and efficient solution for all your profiling needs—especially in multithreaded environments.
 ## Why SmartProfiler?
 
-- **Unified Profiling**: Unlike other libraries that focus on either time or memory, SmartProfiler provides simple and intuitive decorators and context managers to profile both time and memory usage.
-- **Thread-Safe**: Specifically designed to support multithreaded applications, ensuring that profiling works seamlessly across different threads without race conditions or conflicts.
-- **Minimal Overhead**: The library is designed to introduce minimal performance overhead, so you can get accurate measurements without complicating your workflow.
-- **Easy to Use**: With just a few lines of code, you can start profiling functions, blocks of code, or even specific lines with just decorators and context managers.
+- **Unified Profiling**: Unlike other libraries that focus on either time, memory, or CPU, SmartProfiler combines all four types of profiling into a single, intuitive tool. You can easily profile **time**, **memory**, **CPU**, and **function calls** with minimal setup.
+- **Thread-Safe**: Designed with multithreaded applications in mind, SmartProfiler ensures that profiling works seamlessly across different threads without race conditions or conflicts.
+- **Minimal Overhead**: The library introduces minimal performance overhead, providing accurate profiling data without slowing down your application.
+- **Easy to Use**: Profiling functions, code blocks, and even specific lines of code is straightforward. You can use decorators or context managers with just a few lines of code.
+
 ## Features
 
-- **Function-Level Profiling**: Profile execution time or memory usage using decorators.
+- **Function-Level Profiling**: Profile execution time, memory usage, CPU time, and function call counts using decorators.
 - **Code Block and Line Profiling**: Profile specific blocks or lines of code using context managers.
 - **Multithreaded Profiling**: Profile functions, blocks, and lines in multithreaded environments with thread safety.
 - **Flexible Logging**: Integration with Python's logging framework for detailed insights into your code's performance.
+- **Function Call Tracking**: Track the number of times a function is called, thread-safe and efficient.
 
 ## Installation
 
@@ -44,29 +46,72 @@ def memory_intensive_function():
     data = [1] * (10**7)  # Simulate memory usage
 
 ```
-**Block Profiling (Time & Memory)**
+
+**CPU Time Profiling for Functions**
+
+```bash
+from smartprofiler import profile_cpu_time
+
+@profile_cpu_time
+def cpu_intensive_function():
+    # Simulate CPU-intensive task
+    for _ in range(10**6):
+        pass
+
+```
+**Function Call Counting**
+
+```bash
+from smartprofiler import profile_call_count
+
+@profile_call_count
+def my_function():
+    print("Function called")
+
+my_function()  # Logs: Function 'my_function' has been called 1 times
+my_function()  # Logs: Function 'my_function' has been called 2 times
+
+```
+
+**Block Profiling (Time, Memory & CPU-Usage)**
 
 ```bash
 from smartprofiler import profile_block
 
+# Time Profiling Block
 with profile_block('time'):
     time.sleep(1)
 
+# Memory Profiling Block
 with profile_block('memory'):
     data = [1] * (10**6)
 
+# CPU Time Profiling Block
+with profile_block('cpu_time'):
+    # Simulate a CPU-intensive task
+    for _ in range(10**6):
+        pass
+
 ```
 
-**Line Profiling (Time & Memory)**
+**Line Profiling (Time, Memory & CPU-Usage)**
 
 ```bash
 from smartprofiler import profile_line
 
+# Time Profiling Line
 with profile_line('time'):
     result = sum([i for i in range(1000)])
 
+# Memory Profiling Line
 with profile_line('memory'):
     data = [1] * (10**6)
+
+# CPU Time Profiling Line
+with profile_line('cpu_time'):
+    # Simulate CPU-intensive line
+    for _ in range(10**6):
+        pass
 
 ```
 
@@ -87,3 +132,25 @@ for t in threads:
     t.join()
 
 ```
+## Contributing to SmartProfiler
+Contributions to **SmartProfiler** are welcome! Whether you're fixing a bug, adding a feature, or improving documentation, your help is appreciated.
+
+
+### How to Contribute
+
+1. **Fork the Repository**:  
+   Start by forking the [SmartProfiler repository](https://github.com/vigsun19/quick_profile).
+
+2. **Make Your Changes**:  
+   Make the necessary changes, whether it's fixing a bug, adding a new feature, or improving documentation.
+
+3. **Submit a Pull Request**:  
+   Once your changes are ready, submit a pull request with a clear description of what you've done. Be sure to include relevant details, such as any bugs fixed or features added.
+
+### Code of Conduct
+
+By contributing, you agree to follow the Code of Conduct, ensuring a positive environment for all.
+
+---
+
+**GitHub Repository**: [SmartProfiler on GitHub](https://github.com/vigsun19/quick_profile)
