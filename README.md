@@ -59,6 +59,39 @@ def cpu_intensive_function():
         pass
 
 ```
+**Disk Usage Profiling for Functions**
+
+```bash
+from smartprofiler.disk_usage import profile_method
+
+@profile_method
+def perform_disk_operations():
+    """Simulate disk I/O by reading and writing data."""
+    
+    # Simulate writing to a file
+    with open('example_file.txt', 'w') as f:
+        f.write('Simulating disk I/O operations...')
+    
+    # Simulate reading from the file
+    with open('example_file.txt', 'r') as f:
+        content = f.read()
+
+```
+**Network Usage Profiling for Functions**
+
+```bash
+from smartprofiler.network_usage import profile_method
+
+@profile_method
+def fetch_data_from_api():
+    """Simulate a network request."""
+    import requests
+    
+    # Simulate a network request to an external API
+    response = requests.get('https://www.example.com')
+    print(f"Received {len(response.content)} bytes from {response.url}")
+
+```
 **Function Call Counting**
 
 ```bash
