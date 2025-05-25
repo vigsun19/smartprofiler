@@ -40,7 +40,7 @@ The following examples show how to use SmartProfiler to profile different aspect
 
 ```bash
 import time
-from smart_profiler import CPUProfiler
+from smartprofiler import CPUProfiler
 
 # Initialize the CPU profiler
 cpu_profiler = CPUProfiler(time_func='execution_time')
@@ -62,7 +62,7 @@ cpu_profiler.summarize_stats()
 **1.2 Profiling a Disk-Intensive Block**
 ```bash
 
-from smart_profiler import DiskProfiler
+from smartprofiler import DiskProfiler
 
 # Initialize the Disk profiler
 disk_profiler = DiskProfiler(disk_path='/tmp', disk_metrics={'write_bytes': True, 'disk_usage': False})
@@ -80,7 +80,7 @@ disk_profiler.summarize_stats()
 **1.3 Profiling Network I/O with Logging Disabled**
 ```bash
 import requests
-from smart_profiler import NetworkProfiler
+from smartprofiler import NetworkProfiler
 
 # Initialize the Network profiler with logging disabled
 net_profiler = NetworkProfiler(network_metrics={'bytes_sent': True, 'bytes_recv': True}, enable_logging=False)
@@ -104,7 +104,7 @@ SmartProfiler can generate visualizations of profiling data using the plot_profi
 ```bash
 import time
 import random
-from smart_profiler import CPUProfiler, DiskProfiler, MemoryProfiler, plot_profiling_stats
+from smartprofiler import CPUProfiler, DiskProfiler, MemoryProfiler, plot_profiling_stats
 
 # Initialize profilers
 cpu_profiler = CPUProfiler(time_func='execution_time')
@@ -157,7 +157,7 @@ See `examples/examples_visualization.py` for the complete visualization examples
 SmartProfiler supports profiling in multithreaded environments. Here's an example:
 ```bash
 import threading
-from smart_profiler import CPUProfiler
+from smartprofiler import CPUProfiler
 
 cpu_profiler = CPUProfiler(time_func='execution_time')
 
