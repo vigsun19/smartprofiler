@@ -1,193 +1,200 @@
 # SmartProfiler
 
-SmartProfiler is a lightweight and easy-to-use Python library designed to help you effortlessly profile **execution time**, **memory usage**, **CPU time**, and **function call counts** in your Python code. Whether you're optimizing performance, debugging memory usage, tracking CPU utilization, or monitoring function calls, SmartProfiler provides a simple and efficient solution for all your profiling needs—especially in multithreaded environments.
+**SmartProfiler** is a comprehensive Python library designed to help you profile and optimize your code by tracking **execution time, disk I/O, memory usage, network I/O, and function call counts**. It provides an all-in-one solution for performance analysis, complete with integrated visualization to make sense of your profiling data. Whether you're debugging bottlenecks, optimizing resource usage, or monitoring function calls, SmartProfiler offers a simple and efficient toolset for your needs.
+
 ## Why SmartProfiler?
 
-- **Unified Profiling**: Unlike other libraries that focus on either time, memory, or CPU, SmartProfiler combines all four types of profiling into a single, intuitive tool. You can easily profile **time**, **memory**, **CPU**, and **function calls** with minimal setup.
-- **Thread-Safe**: Designed with multithreaded applications in mind, SmartProfiler ensures that profiling works seamlessly across different threads without race conditions or conflicts.
-- **Minimal Overhead**: The library introduces minimal performance overhead, providing accurate profiling data without slowing down your application.
-- **Easy to Use**: Profiling functions, code blocks, and even specific lines of code is straightforward. You can use decorators or context managers with just a few lines of code.
+- **Multi-Faceted Profiling**: Profile execution time, disk I/O, memory usage, network I/O, and function calls in a single library, reducing the need for multiple tools.
+- **Integrated Visualization**: Generate normalized bar charts with a single command to visualize performance metrics across different sections of your code.
+- **Flexible Profiling**: Use decorators or context managers to profile at the function, block, or line level with minimal setup.
+- **Lightweight**: Designed to introduce minimal performance overhead while providing accurate profiling data.
+- **Detailed Logging**: Integration with Python's logging framework for real-time insights into your code's performance.
 
 ## Features
 
-- **Function-Level Profiling**: Profile execution time, memory usage, CPU time, and function call counts using decorators.
-- **Code Block and Line Profiling**: Profile specific blocks or lines of code using context managers.
-- **Multithreaded Profiling**: Profile functions, blocks, and lines in multithreaded environments with thread safety.
-- **Flexible Logging**: Integration with Python's logging framework for detailed insights into your code's performance.
-- **Function Call Tracking**: Track the number of times a function is called, thread-safe and efficient.
+- **Function-Level Profiling**: Profile functions for execution time, disk writes, memory usage, network activity, and call counts using decorators.
+- **Block and Line Profiling**: Profile specific code blocks or individual lines using context managers.
+- **Visualization**: Generate a single PNG file with subplots for each metric, showing normalized values and raw data for easy comparison.
+- **Customizable Metrics**: Configure which metrics to profile (e.g., write_bytes for disk, bytes_sent for network).
+- **Logging Support**: Detailed logs of profiling stats with customizable log levels (e.g., INFO, DEBUG) or the ability to disable logging entirely.
 
 ## Installation
-
-You can easily install SmartProfiler via pip:
-
+Install **SmartProfiler** via pip:
 ```bash
 pip install smartprofiler
-
 ```
+
+### Requirements:
+
+Python 3.8 or higher
+Dependencies: matplotlib, numpy, requests, psutil
 
 ## Usage Examples
-**Time Profiling for Functions**
+SmartProfiler provides a unified interface through profiler classes (CPUProfiler, DiskProfiler, etc.) that can be used as decorators or context managers. Below are examples demonstrating how to use the library for profiling and visualization.
+
+### 1. General Usage Examples
+
+The following examples show how to use SmartProfiler to profile different aspects of your code, such as CPU usage, disk I/O, function calls, memory usage, and network I/O. These examples focus on logging the profiling results.
+
+**1.1 Profiling a CPU-Intensive Function**
 
 ```bash
-from smartprofiler.time import profile_time
+import time
+from smart_profiler import CPUProfiler
 
-@profile_time
-def my_function():
-    time.sleep(1)  # Simulate a time-consuming task
+# Initialize the CPU profiler
+cpu_profiler = CPUProfiler(time_func='execution_time')
 
+# Profile a CPU-intensive function
+@cpu_profiler.profile_function
+def compute_fibonacci(n):
+    if n <= 1:
+        return n
+    return compute_fibonacci(n-1) + compute_fibonacci(n-2)
+
+# Run the function
+compute_fibonacci(20)
+
+# Summarize statistics
+cpu_profiler.summarize_stats()
 ```
-**Memory Profiling for Functions**
 
+**1.2 Profiling a Disk-Intensive Block**
 ```bash
-from smartprofiler.memory import profile_memory
 
-@profile_memory
-def memory_intensive_function():
-    data = [1] * (10**7)  # Simulate memory usage
+from smart_profiler import DiskProfiler
 
-```
+# Initialize the Disk profiler
+disk_profiler = DiskProfiler(disk_path='/tmp', disk_metrics={'write_bytes': True, 'disk_usage': False})
 
-**CPU Time Profiling for Functions**
+# Profile a disk-intensive block
+with disk_profiler.profile_block("disk_write_block"):
+    with open('/tmp/test_file.txt', 'w') as f:
+        f.write("Sample data " * 1000)
 
-```bash
-from smartprofiler.cpu_time import profile_cpu_time
-
-@profile_cpu_time
-def cpu_intensive_function():
-    # Simulate CPU-intensive task
-    for _ in range(10**6):
-        pass
-
-```
-**Disk Usage Profiling for Functions**
-
-```bash
-from smartprofiler.disk_usage import profile_method
-
-@profile_method
-def perform_disk_operations():
-    """Simulate disk I/O by reading and writing data."""
-    
-    # Simulate writing to a file
-    with open('example_file.txt', 'w') as f:
-        f.write('Simulating disk I/O operations...')
-    
-    # Simulate reading from the file
-    with open('example_file.txt', 'r') as f:
-        content = f.read()
-
-```
-**Network Usage Profiling for Functions**
-
-```bash
-from smartprofiler.network_usage import profile_method
-
-@profile_method
-def fetch_data_from_api():
-    """Simulate a network request."""
-    import requests
-    
-    # Simulate a network request to an external API
-    response = requests.get('https://www.example.com')
-    print(f"Received {len(response.content)} bytes from {response.url}")
-
-```
-**Function Call Counting**
-
-```bash
-from smartprofiler.function_tracking import profile_call_count
-
-@profile_call_count
-def my_function():
-    print("Function called")
-
-my_function()  # Logs: Function 'my_function' has been called 1 times
-my_function()  # Logs: Function 'my_function' has been called 2 times
+# Summarize statistics
+disk_profiler.summarize_stats()
 
 ```
 
-**Block Profiling (Time, Memory & CPU-Usage)**
+**1.3 Profiling Network I/O with Logging Disabled**
+```bash
+import requests
+from smart_profiler import NetworkProfiler
+
+# Initialize the Network profiler with logging disabled
+net_profiler = NetworkProfiler(network_metrics={'bytes_sent': True, 'bytes_recv': True}, enable_logging=False)
+
+# Profile a network-intensive block
+with net_profiler.profile_block("api_request"):
+    requests.get('https://api.github.com')
+
+# Manually print stats (since logging is disabled)
+stats = net_profiler.get_stats()
+print("Network stats:", stats)
+```
+See `examples/examples_general_usage.py` for more usage examples, including profiling function calls, memory usage, and multithreaded scenarios.
+
+### 2. Visualization Examples
+
+SmartProfiler can generate visualizations of profiling data using the plot_profiling_stats function. The following example demonstrates how to profile various tasks and visualize the results.
+
+**2.1 Profiling and Visualizing CPU, Disk, and Memory Usage**
 
 ```bash
-from smartprofiler.time import profile_block
-from smartprofiler.memory import profile_block
-from smartprofiler.cpu_time import profile_block
+import time
+import random
+from smart_profiler import CPUProfiler, DiskProfiler, MemoryProfiler, plot_profiling_stats
 
-# Time Profiling Block
-with profile_block('time'):
-    time.sleep(1)
+# Initialize profilers
+cpu_profiler = CPUProfiler(time_func='execution_time')
+disk_profiler = DiskProfiler(disk_path='/tmp', disk_metrics={'write_bytes': True, 'disk_usage': False})
+mem_profiler = MemoryProfiler()
 
-# Memory Profiling Block
-with profile_block('memory'):
-    data = [1] * (10**6)
+# Profile a CPU-intensive function
+@cpu_profiler.profile_function
+@mem_profiler.profile_function
+def matrix_multiply():
+    size = 500
+    matrix_a = [[random.random() for _ in range(size)] for _ in range(size)]
+    matrix_b = [[random.random() for _ in range(size)] for _ in range(size)]
+    result = [[0 for _ in range(size)] for _ in range(size)]
+    for i in range(size):
+        for j in range(size):
+            for k in range(size):
+                result[i][j] += matrix_a[i][k] * matrix_b[k][j]
+    return result
 
-# CPU Time Profiling Block
-with profile_block('cpu_time'):
-    # Simulate a CPU-intensive task
-    for _ in range(10**6):
-        pass
+# Run the function
+matrix_multiply()
 
+# Generate visualization
+plot_profiling_stats(
+    [cpu_profiler, disk_profiler, mem_profiler],
+    output_dir='images',
+    output_file='profiling_stats_cpu_disk_memory.png'
+)
 ```
 
-**Line Profiling (Time, Memory & CPU-Usage)**
+**Visualization Results**
 
-```bash
-from smartprofiler.time import profile_line
-from smartprofiler.memory import profile_line
-from smartprofiler.cpu_time import profile_line
 
-# Time Profiling Line
-with profile_line('time'):
-    result = sum([i for i in range(1000)])
 
-# Memory Profiling Line
-with profile_line('memory'):
-    data = [1] * (10**6)
 
-# CPU Time Profiling Line
-with profile_line('cpu_time'):
-    # Simulate CPU-intensive line
-    for _ in range(10**6):
-        pass
+1. CPU, Disk, and Memory Profiling: This visualization includes CPU-intensive tasks (matrix multiplication), disk I/O (writing large files), and memory usage (large list allocation).
 
-```
+ 
 
-**Multithreaded Profiling**
 
+2. Network and Function Call Profiling: This visualization highlights network I/O (multiple API requests) and function calls (recursive Fibonacci calculation).
+
+
+
+See `examples/examples_visualization.py` for the complete visualization examples, which include additional scenarios like network I/O and function call profiling.
+
+### 3. Multithreaded Profiling
+
+SmartProfiler supports profiling in multithreaded environments. Here's an example:
 ```bash
 import threading
-from smartprofiler.time import profile_time
+from smart_profiler import CPUProfiler
+
+cpu_profiler = CPUProfiler(time_func='execution_time')
 
 def thread_function():
-    with profile_time:
+    with cpu_profiler.profile_block("thread_task"):
         time.sleep(1)
 
+# Create and run threads
 threads = [threading.Thread(target=thread_function) for _ in range(5)]
 for t in threads:
     t.start()
 for t in threads:
     t.join()
 
+# Summarize stats
+cpu_profiler.summarize_stats()
+    
 ```
+
 ## Contributing to SmartProfiler
 Contributions to **SmartProfiler** are welcome! Whether you're fixing a bug, adding a feature, or improving documentation, your help is appreciated.
-
 
 ### How to Contribute
 
 1. **Fork the Repository**:  
-   Start by forking the [SmartProfiler repository](https://github.com/vigsun19/quick_profile).
+    Start by forking the SmartProfiler repository.
 
 2. **Make Your Changes**:  
-   Make the necessary changes, whether it's fixing a bug, adding a new feature, or improving documentation.
+    Make the necessary changes, whether it's fixing a bug, adding a new feature, or improving documentation.
 
-3. **Submit a Pull Request**:  
-   Once your changes are ready, submit a pull request with a clear description of what you've done. Be sure to include relevant details, such as any bugs fixed or features added.
+3. **Submit a Pull Request**: 
+    Once your changes are ready, submit a pull request with a clear description of what you've done. Be sure to include relevant details, such as any bugs fixed or features added.
+
 
 ### Code of Conduct
-
 By contributing, you agree to follow the Code of Conduct, ensuring a positive environment for all.
-
----
+License
+SmartProfiler is licensed under the MIT License. See the LICENSE file for details.
 
 **GitHub Repository**: [SmartProfiler on GitHub](https://github.com/vigsun19/quick_profile)

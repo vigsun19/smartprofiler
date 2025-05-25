@@ -1,1 +1,6 @@
-psutil
+psutil~=6.1.0
+smartprofiler~=0.3.2
+setuptools~=75.6.0
+requests~=2.32.3
+matplotlib~=3.10.3
+numpy~=2.2.6
