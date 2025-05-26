@@ -1,0 +1,2 @@
+## Contributor License Agreement
+All contributors must agree to the Contributor License Agreement (see CONTRIBUTOR_LICENSE.md) to ensure the project can use your contributions. Please add your name to CONTRIBUTORS.md in your first pull request to confirm your agreement.

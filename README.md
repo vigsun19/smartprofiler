@@ -194,7 +194,12 @@ Contributions to **SmartProfiler** are welcome! Whether you're fixing a bug, add
 
 ### Code of Conduct
 By contributing, you agree to follow the Code of Conduct, ensuring a positive environment for all.
-License
+
+### Contributors
+SmartProfiler is proud to have a growing community of contributors who are helping shape the project. See the `CONTRIBUTORS.md` file for a list of contributors and their contributions. Join us to make an impact and gain recognition for your work!
+
+
+### License
 SmartProfiler is licensed under the MIT License. See the LICENSE file for details.
 
 **GitHub Repository**: [SmartProfiler on GitHub](https://github.com/vigsun19/quick_profile)
