@@ -4,3 +4,5 @@ setuptools~=75.6.0
 requests~=2.32.3
 matplotlib~=3.10.3
 numpy~=2.2.6
+structlog~=25.3.0 # Optional for testing third-party logger support
+loguru~=0.7.3 # Optional for testing third-party logger support
