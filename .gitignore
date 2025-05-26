@@ -6,3 +6,7 @@ tests/__pycache__/
 build/
 *.egg-info/
 dist/
+
+.venv/
+.coverage*
+.pytest_cache/
