@@ -2,6 +2,8 @@
 
 **SmartProfiler** is a comprehensive Python library designed to help you profile and optimize your code by tracking **execution time, disk I/O, memory usage, network I/O, and function call counts**. It provides an all-in-one solution for performance analysis, complete with integrated visualization to make sense of your profiling data. Whether you're debugging bottlenecks, optimizing resource usage, or monitoring function calls, SmartProfiler offers a simple and efficient toolset for your needs.
 
+**[GitHub Repository](https://github.com/vigsun19/smartprofiler)**
+
 ## Why SmartProfiler?
 
 - **Multi-Faceted Profiling**: Profile execution time, disk I/O, memory usage, network I/O, and function calls in a single library, reducing the need for multiple tools.
@@ -178,7 +180,27 @@ cpu_profiler.summarize_stats()
 ```
 
 ## Contributing to SmartProfiler
-Contributions to **SmartProfiler** are welcome! Whether you're fixing a bug, adding a feature, or improving documentation, your help is appreciated.
+
+
+Contributions to SmartProfiler are welcome! Whether you're fixing a bug, adding a feature, or improving documentation, your help is appreciated. Please see the CONTRIBUTING.md file for detailed guidelines on how to contribute, including setup instructions, coding standards, and the contribution process.
+
+### Contributor Recognition
+
+All contributors will be credited in the CONTRIBUTORS.md file, and their work will be documented in GitHub pull requests, providing clear evidence of their contributions for professional portfolios, including EB1A visa applications.
+
+### Code of Conduct
+
+By contributing, you agree to follow the Code of Conduct, ensuring a positive environment for all.
+
+### Contributors
+
+SmartProfiler is led by **Vignesh Sundaram** (GitHub: vigsun19), who is the lead developer, owner, and maintainer of the project.
+
+The following individuals have contributed to SmartProfiler:
+
+Vignesh Sundaram (GitHub: vigsun19)
+
+See the [CONTRIBUTORS.md](./CONTRIBUTORS.md) file for a list of contributors and their contributions.
 
 ### How to Contribute
 
@@ -192,14 +214,6 @@ Contributions to **SmartProfiler** are welcome! Whether you're fixing a bug, add
     Once your changes are ready, submit a pull request with a clear description of what you've done. Be sure to include relevant details, such as any bugs fixed or features added.
 
 
-### Code of Conduct
-By contributing, you agree to follow the Code of Conduct, ensuring a positive environment for all.
-
-### Contributors
-SmartProfiler is proud to have a growing community of contributors who are helping shape the project. See the `CONTRIBUTORS.md` file for a list of contributors and their contributions. Join us to make an impact and gain recognition for your work!
-
-
 ### License
 SmartProfiler is licensed under the MIT License. See the LICENSE file for details.
 
-**GitHub Repository**: [SmartProfiler on GitHub](https://github.com/vigsun19/quick_profile)
