@@ -1,3 +1,8 @@
 .idea/
 smartprofiler/__pycache__/
 tests/__pycache__/
+
+# Build and distribution files
+build/
+*.egg-info/
+dist/
