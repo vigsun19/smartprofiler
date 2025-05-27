@@ -55,6 +55,22 @@ class LoggerAdapter(LoggerInterface):
                 f"Missing methods: {', '.join(missing_methods)}"
             )
     
+    def _get_log_level_int(self, level: Union[str, int]) -> int:
+        """Convert string log level to integer if needed."""
+        if isinstance(level, str):
+            level = level.upper()
+            level_map = {
+                'DEBUG': logging.DEBUG,
+                'INFO': logging.INFO,
+                'WARNING': logging.WARNING,
+                'ERROR': logging.ERROR,
+                'CRITICAL': logging.CRITICAL
+            }
+            if level not in level_map:
+                raise ValueError(f"Invalid log level: {level}")
+            return level_map[level]
+        return level
+
     def info(self, msg: str, *args: Any, **kwargs: Any) -> None:
         """Log an info message."""
         self._logger.info(msg, *args, **kwargs)
@@ -71,9 +87,10 @@ class LoggerAdapter(LoggerInterface):
         """Log a warning message."""
         self._logger.warning(msg, *args, **kwargs)
     
-    def log(self, level: int, msg: str, *args: Any, **kwargs: Any) -> None:
+    def log(self, level: Union[str, int], msg: str, *args: Any, **kwargs: Any) -> None:
         """Log a message at the specified level."""
-        self._logger.log(level, msg, *args, **kwargs)
+        level_int = self._get_log_level_int(level)
+        self._logger.log(level_int, msg, *args, **kwargs)
     
     def setLevel(self, level: int) -> None:
         """Set the logging level if the logger supports it."""

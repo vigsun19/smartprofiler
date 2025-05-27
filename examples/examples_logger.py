@@ -1,50 +1,71 @@
 """
-Examples demonstrating the usage of the LoggerAdapter with different logging backends.
-This example shows how to use the LoggerAdapter with standard logging, loguru, and structlog.
+Examples demonstrating the usage of different logging backends with the SmartProfiler.
+This example shows how to use standard logging, loguru, and structlog with CPU profiling.
 """
 
 import logging
+import time
+from smartprofiler import CPUProfiler
 from smartprofiler.logger_adapter import LoggerAdapter
+
+def compute_fibonacci(n: int) -> int:
+    """Compute the nth Fibonacci number."""
+    if n <= 1:
+        return n
+    return compute_fibonacci(n - 1) + compute_fibonacci(n - 2)
 
 # Example 1: Using standard logging
 def example_standard_logging():
-    print("\n=== Example 1: Standard Logging ===")
+    print("\n=== Example 1: Standard Logging with CPU Profiling ===")
     
     # Setup standard logger
     logger = logging.getLogger('standard_logger')
     logger.setLevel(logging.INFO)
     
-    # Add console handler
+    # Add console handler with detailed formatting
     console_handler = logging.StreamHandler()
-    console_handler.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
+    console_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
     logger.addHandler(console_handler)
     
-    # Create adapter
-    adapter = LoggerAdapter(logger)
+    # Create CPU profiler with standard logger
+    cpu_profiler = CPUProfiler(
+        time_func='execution_time',
+        logger=logger,
+        log_level=logging.INFO
+    )
     
-    # Demonstrate different log levels
-    adapter.debug("This debug message won't show (level is INFO)")
-    adapter.info("This is an info message")
-    adapter.warning("This is a warning message")
-    adapter.error("This is an error message")
+    # Profile a CPU-intensive function
+    @cpu_profiler.profile_function
+    def profiled_fibonacci(n: int) -> int:
+        return compute_fibonacci(n)
     
-    # Demonstrate custom log level
-    adapter.log(logging.CRITICAL, "This is a critical message")
+    print("Profiling Fibonacci calculation with standard logging:")
+    result = profiled_fibonacci(20)
+    print(f"Fibonacci(20) = {result}")
+    cpu_profiler.summarize_stats()
 
 # Example 2: Using loguru (if available)
 def example_loguru():
     try:
         from loguru import logger as loguru_logger
-        print("\n=== Example 2: Loguru ===")
+        print("\n=== Example 2: Loguru with CPU Profiling ===")
         
-        # Create adapter with loguru logger
-        adapter = LoggerAdapter(loguru_logger)
+        # Create CPU profiler with default loguru logger
+        cpu_profiler = CPUProfiler(
+            time_func='execution_time',
+            logger=loguru_logger,
+            log_level="INFO"
+        )
         
-        # Demonstrate different log levels
-        adapter.debug("This is a debug message")
-        adapter.info("This is an info message")
-        adapter.warning("This is a warning message")
-        adapter.error("This is an error message")
+        # Profile a CPU-intensive function
+        @cpu_profiler.profile_function
+        def profiled_fibonacci(n: int) -> int:
+            return compute_fibonacci(n)
+        
+        print("Profiling Fibonacci calculation with loguru:")
+        result = profiled_fibonacci(20)
+        print(f"Fibonacci(20) = {result}")
+        cpu_profiler.summarize_stats()
         
     except ImportError:
         print("\n=== Example 2: Loguru ===")
@@ -54,35 +75,35 @@ def example_loguru():
 def example_structlog():
     try:
         import structlog
-        print("\n=== Example 3: Structlog ===")
+        print("\n=== Example 3: Structlog with CPU Profiling ===")
         
-        # Configure structlog
-        structlog.configure(
-            processors=[
-                structlog.processors.TimeStamper(fmt="iso"),
-                structlog.processors.JSONRenderer()
-            ]
-        )
-        
-        # Create structlog logger
+        # Create structlog logger with default configuration
         logger = structlog.get_logger()
         
-        # Create adapter
-        adapter = LoggerAdapter(logger)
+        # Create CPU profiler with structlog logger
+        cpu_profiler = CPUProfiler(
+            time_func='execution_time',
+            logger=logger,
+            log_level="INFO"
+        )
         
-        # Demonstrate different log levels
-        adapter.debug("This is a debug message")
-        adapter.info("This is an info message")
-        adapter.warning("This is a warning message")
-        adapter.error("This is an error message")
+        # Profile a CPU-intensive function
+        @cpu_profiler.profile_function
+        def profiled_fibonacci(n: int) -> int:
+            return compute_fibonacci(n)
+        
+        print("Profiling Fibonacci calculation with structlog:")
+        result = profiled_fibonacci(20)
+        print(f"Fibonacci(20) = {result}")
+        cpu_profiler.summarize_stats()
         
     except ImportError:
         print("\n=== Example 3: Structlog ===")
         print("Structlog is not installed. Install it with: pip install structlog")
 
 def main():
-    print("Logger Adapter Examples")
-    print("======================")
+    print("SmartProfiler Logger Examples")
+    print("============================")
     
     # Run all examples
     example_standard_logging()
