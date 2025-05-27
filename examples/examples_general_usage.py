@@ -1,15 +1,58 @@
 import time
 import requests
 import logging
+import argparse
 from smartprofiler import CPUProfiler, DiskProfiler, FunctionProfiler, MemoryProfiler, NetworkProfiler
 
-def main():
-    # Set up a custom logger for more detailed output
+def setup_logger(logger_type: str = None) -> logging.Logger:
+    """
+    Set up and return a logger based on the specified type.
+    
+    Args:
+        logger_type: Type of logger to use ('loguru', 'structlog', or None for default)
+    
+    Returns:
+        Configured logger instance
+    """
+    if logger_type == 'loguru':
+        try:
+            from loguru import logger
+            return logger
+        except ImportError:
+            print("Loguru is not installed. Falling back to default logger.")
+            print("Install it with: pip install loguru")
+            return setup_default_logger()
+    
+    elif logger_type == 'structlog':
+        try:
+            import structlog
+            return structlog.get_logger()
+        except ImportError:
+            print("Structlog is not installed. Falling back to default logger.")
+            print("Install it with: pip install structlog")
+            return setup_default_logger()
+    
+    return setup_default_logger()
+
+def setup_default_logger() -> logging.Logger:
+    """Set up and return the default Python logger."""
     logger = logging.getLogger('smartprofiler_examples')
     logger.setLevel(logging.DEBUG)
     handler = logging.StreamHandler()
     handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
     logger.addHandler(handler)
+    return logger
+
+def main():
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description='SmartProfiler Examples with Different Loggers')
+    parser.add_argument('--logger', choices=['loguru', 'structlog'], 
+                      help='Logger type to use (default: standard Python logger)')
+    args = parser.parse_args()
+
+    # Set up the selected logger
+    logger = setup_logger(args.logger)
+    print(f"\nUsing {args.logger if args.logger else 'default'} logger\n")
 
     # Initialize profilers with custom logging settings
     cpu_profiler = CPUProfiler(time_func='execution_time', logger=logger, log_level=logging.DEBUG)
