@@ -38,16 +38,16 @@ SmartProfiler provides a unified interface through profiler classes (CPUProfiler
 
 The following examples show how to use SmartProfiler to profile different aspects of your code, such as CPU usage, disk I/O, function calls, memory usage, and network I/O. These examples focus on logging the profiling results.
 
-**1.1 Profiling a CPU-Intensive Function**
+**1.1 Profiling with Standard Logger**
 
-```bash
-import time
+```python
+import logging
 from smartprofiler import CPUProfiler
 
-# Initialize the CPU profiler
-cpu_profiler = CPUProfiler(time_func='execution_time')
+# Initialize the CPU profiler with standard logger
+logger = logging.getLogger(__name__)
+cpu_profiler = CPUProfiler(logger=logger)
 
-# Profile a CPU-intensive function
 @cpu_profiler.profile_function
 def compute_fibonacci(n):
     if n <= 1:
@@ -56,9 +56,93 @@ def compute_fibonacci(n):
 
 # Run the function
 compute_fibonacci(20)
+```
 
-# Summarize statistics
-cpu_profiler.summarize_stats()
+**1.2 Profiling with Loguru Logger**
+
+```python
+from loguru import logger
+from smartprofiler import CPUProfiler
+
+# Initialize the CPU profiler with loguru logger
+cpu_profiler = CPUProfiler(logger=logger)
+
+@cpu_profiler.profile_function
+def compute_fibonacci(n):
+    if n <= 1:
+        return n
+    return compute_fibonacci(n-1) + compute_fibonacci(n-2)
+
+# Run the function
+compute_fibonacci(20)
+```
+
+**1.3 Profiling with Structlog Logger**
+
+```python
+import structlog
+from smartprofiler import CPUProfiler
+
+# Configure structlog
+structlog.configure(
+    processors=[
+        structlog.processors.TimeStamper(fmt="iso"),
+        structlog.processors.JSONRenderer()
+    ]
+)
+
+# Initialize the CPU profiler with structlog logger
+logger = structlog.get_logger()
+cpu_profiler = CPUProfiler(logger=logger)
+
+@cpu_profiler.profile_function
+def compute_fibonacci(n):
+    if n <= 1:
+        return n
+    return compute_fibonacci(n-1) + compute_fibonacci(n-2)
+
+# Run the function
+compute_fibonacci(20)
+```
+
+**1.4 Custom Logger Implementation**
+
+You can also use any custom logger that implements the required logging interface. The logger must have at least these methods:
+- `info(msg, *args, **kwargs)`
+- `error(msg, *args, **kwargs)`
+- `debug(msg, *args, **kwargs)`
+- `warning(msg, *args, **kwargs)`
+- `log(level, msg, *args, **kwargs)`
+
+```python
+class CustomLogger:
+    def info(self, msg, *args, **kwargs):
+        print(f"INFO: {msg}")
+    
+    def error(self, msg, *args, **kwargs):
+        print(f"ERROR: {msg}")
+    
+    def debug(self, msg, *args, **kwargs):
+        print(f"DEBUG: {msg}")
+    
+    def warning(self, msg, *args, **kwargs):
+        print(f"WARNING: {msg}")
+    
+    def log(self, level, msg, *args, **kwargs):
+        print(f"LOG[{level}]: {msg}")
+
+# Initialize the CPU profiler with custom logger
+logger = CustomLogger()
+cpu_profiler = CPUProfiler(logger=logger)
+
+@cpu_profiler.profile_function
+def compute_fibonacci(n):
+    if n <= 1:
+        return n
+    return compute_fibonacci(n-1) + compute_fibonacci(n-2)
+
+# Run the function
+compute_fibonacci(20)
 ```
 
 **1.2 Profiling a Disk-Intensive Block**

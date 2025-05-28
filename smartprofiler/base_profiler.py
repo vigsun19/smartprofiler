@@ -1,8 +1,9 @@
 import logging
 import threading
 from abc import ABC, abstractmethod
-from typing import Optional, Callable, Dict, List
+from typing import Optional, Callable, Dict, List, Any
 from functools import wraps
+from .logger_adapter import LoggerAdapter
 
 # Thread-local storage for thread-safe profiling
 _thread_local = threading.local()
@@ -10,21 +11,26 @@ _thread_local = threading.local()
 class BaseProfiler(ABC):
     """Abstract base class for profiling implementations with aggregate statistics."""
 
-    def __init__(self, logger: Optional[logging.Logger] = None, log_level: int = logging.INFO, enable_logging: bool = True):
+    def __init__(self, logger: Optional[Any] = None, log_level: int = logging.INFO, enable_logging: bool = True):
         """
         Initialize the profiler with an optional custom logger, log level, and logging enablement.
 
         Args:
             logger: Custom logger instance (default: None, uses default logger).
+                  Can be logging.Logger, loguru.Logger, structlog.BoundLogger, or any custom logger.
             log_level: Logging level to use (e.g., logging.INFO, logging.DEBUG).
             enable_logging: If False, disables logging of metrics.
         """
-        self.logger = logger or logging.getLogger(__name__)
-        self.logger.setLevel(log_level)  # Set logger level to match log_level
-        if not self.logger.handlers:
+        # Create a default logger if none provided
+        default_logger = logging.getLogger(__name__)
+        if not default_logger.handlers:
             handler = logging.StreamHandler()
             handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-            self.logger.addHandler(handler)
+            default_logger.addHandler(handler)
+        
+        # Wrap the logger with our adapter
+        self.logger = LoggerAdapter(logger or default_logger)
+        self.logger.setLevel(log_level)
         self.log_level = log_level
         self.enable_logging = enable_logging
         # Store profiling results for aggregate statistics
