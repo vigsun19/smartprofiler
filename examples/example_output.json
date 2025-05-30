@@ -1,0 +1,9 @@
+[
+    {
+        "label": "load_data",
+        "metrics": {
+            "execution_time": 0.25,
+            "memory": 50
+        }
+    }
+]
