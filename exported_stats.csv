@@ -1,0 +1,3 @@
+label,execution_time,memory_used
+load_data,0.12,32
+clean_data,0.25,54

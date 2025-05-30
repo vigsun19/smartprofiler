@@ -1,4 +1,4 @@
-from base_profiler_export_test import ExportableProfiler
+from exportable_profiler import ExportableProfiler
 
 # Create an instance
 profiler = ExportableProfiler()
