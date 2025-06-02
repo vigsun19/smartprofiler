@@ -1,21 +1,26 @@
-import logging
-from smartprofiler.base_profiler import BaseProfiler
+import os  
 import json
 import csv
+from smartprofiler.base_profiler import BaseProfiler
 
-class ExportableProfiler(BaseProfiler):
+class ExportStats(BaseProfiler):
+
     def profile_function(self, func):
-        return func  # Dummy implementation for testing
+        return func  # Dummy implementation
 
     def profile_block(self, label: str):
-        pass  # Not needed for export test
+        pass
 
     def profile_line(self, label: str):
-        pass  # Not needed for export test
+        pass
 
     def export_stats(self, format: str, file_path: str):
         if format not in ['json', 'csv']:
             raise ValueError("Format must be either 'json' or 'csv'")
+
+        directory = os.path.dirname(file_path)
+        if directory and not os.path.exists(directory):
+            os.makedirs(directory, exist_ok=True)
 
         if format == 'json':
             with open(file_path, 'w') as f:
