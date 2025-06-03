@@ -7,12 +7,12 @@ import sys
 # Add parent directory to import path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from exportable_profiler import ExportableProfiler
+from smartprofiler.export_stats import ExportStats
 
 class TestExportStats(unittest.TestCase):
 
     def test_export_to_json(self):
-        profiler = ExportableProfiler()
+        profiler = ExportStats()
         profiler.stats = [
             {"label": "load_data", "metrics": {"execution_time": 0.5, "memory": 100}}
         ]
@@ -28,7 +28,7 @@ class TestExportStats(unittest.TestCase):
         os.remove(file_path)
 
     def test_export_to_csv(self):
-        profiler = ExportableProfiler()
+        profiler = ExportStats()
         profiler.stats = [
             {"label": "load_data", "metrics": {"execution_time": 0.5, "memory": 100}}
         ]
