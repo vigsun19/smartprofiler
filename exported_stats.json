@@ -1,0 +1,16 @@
+[
+    {
+        "label": "load_data",
+        "metrics": {
+            "execution_time": 0.12,
+            "memory_used": 32
+        }
+    },
+    {
+        "label": "clean_data",
+        "metrics": {
+            "execution_time": 0.25,
+            "memory_used": 54
+        }
+    }
+]
