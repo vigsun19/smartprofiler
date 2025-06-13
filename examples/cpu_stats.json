@@ -1,0 +1,1064 @@
+[
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.002257899999676738
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0006909000003361143
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.003933899999537971
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0006111999973654747
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.005022099998313934
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00025639999512350187
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0005238999947323464
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0011082000055466779
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.006502700001874473
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002710999979171902
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00023379999765893444
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007769000003463589
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002367999986745417
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0014020000016898848
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0082576999993762
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00025469999673077837
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022890000400366262
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007432999991578981
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022200000239536166
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0012292000028537586
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022680000256514177
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002179000002797693
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007052000000840053
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.002186400000937283
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.01069679999636719
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002472000051056966
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002238000015495345
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007273999945027754
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002161999946110882
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0012021000002278015
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022929999977350235
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00021749999723397195
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0011314000003039837
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0030610000030719675
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0006436999974539503
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0003254000039305538
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0013762999951723032
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00023299999884329736
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0018931000013253652
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.005313599998771679
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.016267400002107024
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00024960000155260786
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00023260000307345763
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007366999998339452
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022460000036517158
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0012196999959996901
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00023259999579750001
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00021859999833395705
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007149000011850148
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00218499999755295
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00041530000453349203
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00044490000436780974
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.001433799996448215
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00031179999496089295
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0021091000016895123
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.004542300004686695
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0005960999988019466
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00034440000308677554
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.001424499998393003
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00043900000309804454
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0023153000001912005
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00032700000156182796
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0006487999999080785
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.001304999997955747
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.003936400004022289
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.008959099999628961
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.02551899999525631
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00029519999952754006
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022330000501824543
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007844000065233558
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002327999973203987
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0012684999965131283
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002249000026495196
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00023090000468073413
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007163999980548397
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0022334000022965483
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0003008999992744066
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002232000042567961
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007838000019546598
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00021719999494962394
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.001279799995245412
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0040608000053907745
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0006443999955081381
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0005540000056498684
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.001749099996231962
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0004450999986147508
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0024982999966596253
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002375999974901788
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022760000138077885
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.000738000002456829
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0035208000044804066
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.007984099996974692
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002446000071358867
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00023720000172033906
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007445000010193326
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0005222000036155805
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0017693999980110675
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0003437999985180795
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00032410000130767
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0010015000007115304
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0030813999983365647
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002334000018890947
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00021890000061830506
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007108999998308718
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022870000248076394
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0015114000052562915
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.004934900003718212
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.01317699999344768
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.03896030000032624
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00028030000248691067
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002499999973224476
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0008085999943432398
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00023920000239741057
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.001358999994408805
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022929999977350235
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022080000053392723
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.000717100003384985
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.002424099999188911
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002753000007942319
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00021890000061830506
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.000763399999414105
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022119999630376697
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0012409000046318397
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.003983100003097206
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0005434000049717724
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002271999983349815
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00104490000376245
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00023950000468175858
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0015440999995917082
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022119999630376697
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022049999824957922
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0006992999988142401
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0024917999980971217
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.006720299999869894
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0008014999984879978
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007324999969569035
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0022573999958694912
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0004867000025114976
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0030823999986751005
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00024220000341301784
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00023650000366615131
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007410999969579279
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0040759000039543025
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00024960000155260786
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0006742000041413121
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0013726999968639575
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0005788999987998977
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0023772999993525445
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.006702899998344947
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.013676900001883041
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002949999980046414
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022870000248076394
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.000781700000516139
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022119999630376697
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0012636999963433482
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022429999808082357
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00021540000307140872
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0007119000001694076
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0022291999994195066
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002328000045963563
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00024219999613706023
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0009592000060365535
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0003815000018221326
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0017103999998653308
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.004197000002022833
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00023569999757455662
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0002162000018870458
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.000709700005245395
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00021410000044852495
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0011870000016642734
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00021869999909540638
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00022090000129537657
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.0006945999994059093
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.00213649999932386
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.006583599999430589
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.020520100006251596
+        }
+    },
+    {
+        "label": "Function 'compute_fibonacci'",
+        "metrics": {
+            "execution_time": 0.06139619999885326
+        }
+    }
+]
