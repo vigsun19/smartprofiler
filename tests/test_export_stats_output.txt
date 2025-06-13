@@ -1,0 +1,31 @@
+2025-06-12 14:59:07,996 - INFO - Function 'work' - Bytes sent: 0
+2025-06-12 14:59:07,997 - INFO - Function 'work' - Bytes received: 0
+2025-06-12 14:59:07,998 - INFO - Function 'work' - Packets sent: 0
+2025-06-12 14:59:07,999 - INFO - Function 'work' - Packets received: 0
+2025-06-12 14:59:07,999 - INFO - Function 'work' made 180 function calls
+2025-06-12 14:59:08,000 - INFO - Function 'work' - Bytes read: 0
+2025-06-12 14:59:08,000 - INFO - Function 'work' - Bytes written: 0
+2025-06-12 14:59:08,000 - INFO - Function 'work' - Read operations: 0
+2025-06-12 14:59:08,000 - INFO - Function 'work' - Write operations: 0
+2025-06-12 14:59:08,007 - INFO - Function 'work' - Disk space before: Total=476.02GB, Used=132.04GB, Free=343.98GB
+2025-06-12 14:59:08,008 - INFO - Function 'work' - Disk space after: Total=476.02GB, Used=132.04GB, Free=343.98GB
+2025-06-12 14:59:08,008 - INFO - Function 'work' memory usage: Current=0.07MB, Peak=0.08MB
+2025-06-12 14:59:08,008 - INFO - Function 'work' took 0.0299 seconds of execution_time
+.2025-06-12 14:59:08,090 - INFO - Function 'work' - Bytes sent: 0
+2025-06-12 14:59:08,090 - INFO - Function 'work' - Bytes received: 0
+2025-06-12 14:59:08,091 - INFO - Function 'work' - Packets sent: 0
+2025-06-12 14:59:08,091 - INFO - Function 'work' - Packets received: 0
+2025-06-12 14:59:08,092 - INFO - Function 'work' made 180 function calls
+2025-06-12 14:59:08,092 - INFO - Function 'work' - Bytes read: 65536
+2025-06-12 14:59:08,093 - INFO - Function 'work' - Bytes written: 0
+2025-06-12 14:59:08,093 - INFO - Function 'work' - Read operations: 1
+2025-06-12 14:59:08,093 - INFO - Function 'work' - Write operations: 0
+2025-06-12 14:59:08,093 - INFO - Function 'work' - Disk space before: Total=476.02GB, Used=132.04GB, Free=343.98GB
+2025-06-12 14:59:08,093 - INFO - Function 'work' - Disk space after: Total=476.02GB, Used=132.04GB, Free=343.98GB
+2025-06-12 14:59:08,093 - INFO - Function 'work' memory usage: Current=0.04MB, Peak=0.05MB
+2025-06-12 14:59:08,093 - INFO - Function 'work' took 0.0268 seconds of execution_time
+.
+----------------------------------------------------------------------
+Ran 2 tests in 0.172s
+
+OK
